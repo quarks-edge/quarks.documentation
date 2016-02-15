@@ -1,4 +1,4 @@
-# quarks.doc
+# quarks.documentation
 Documentation project for quarks
 
 # Updating Top Menu Bar

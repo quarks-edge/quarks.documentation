@@ -22,7 +22,7 @@ To request new documentation, please open an issue here:
 
 # Providing Feedback
 
-To provide feedback on our documentation:
+To provide feedback on Quarks documentation:
 
 1.  Navigate to the documentation page that you would like to provide feedback for.
 1.  Click on the **Feedback** button in the top right corner.
