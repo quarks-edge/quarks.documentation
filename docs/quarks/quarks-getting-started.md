@@ -27,14 +27,14 @@ Quarks' primary API is functional where streams are sourced, transformed, analyz
 
 
 ## Downloading Quarks
-To access Quarks, download a stable release from GitHub. We recommend downloading the [latest release](https://github.com/quarks-edge/quarks/releases/latest).
+To access Quarks, download a release from GitHub. We recommend downloading the [latest release](https://github.com/quarks-edge/quarks/releases/latest).
 
 After you download and extract the Quarks package, you can set up your environment.
 
 ## Setting up your environment
 Ensure that you are running a supported environment. For more information, see the [Quarks overview](../overview). This guide assumes you're running Java 8.
 
-The Quarks Java 8 JAR files are located in the `quarks\java8\lib` directory.
+The Quarks Java 8 JAR files are located in the `quarks/java8/lib` directory.
 
 
 1. Create a new Java project in Eclipse, and specify Java 8 as the execution environment JRE:
@@ -55,7 +55,7 @@ If you're new to Quarks or to writing streaming applications, the best way to ge
 
 Quarks is a framework that pushes data analytics and machine learning to *edge devices*. (Edge devices include things like routers, gateways, machines, equipment, sensors, appliances, or vehicles that are connected to a network.) Quarks enables you to process data locally---such as, in a car engine, on an Android phone, or Raspberry Pi---before you send data over a network.
 
-For example, if your device takes temperature readings from a sensor 10,000 times per second, it is more efficient to process the data locally and send only interesting or unexpected results over the network. To simulate this, let's define a TempSensor class:
+For example, if your device takes temperature readings from a sensor 1,000 times per second, it is more efficient to process the data locally and send only interesting or unexpected results over the network. To simulate this, let's define a (simulated) TempSensor class:
 
 
   {% highlight java %}
@@ -88,7 +88,7 @@ For example, if your device takes temperature readings from a sensor 10,000 time
 
 Every time you call `TempSensor.get()`, it returns a new temperature reading. The continuous temperature readings are a stream of data that a Quarks application can process.
 
-Our sample Quarks application processes this stream by filtering the data and printing the results to output:
+Our sample Quarks application processes this stream by filtering the data and printing the results:
 
   {% highlight java %}
 
@@ -107,29 +107,31 @@ Our sample Quarks application processes this stream by filtering the data and pr
 To understand how the application processes the stream, let's review each line.
 
 ## Specifying a Provider
-Your first step when you write a Quarks application is to create a `DirectProvider` ojbect:
+Your first step when you write a Quarks application is to create a
+[`DirectProvider`](http://quarks-edge.github.io/quarks/docs/javadoc/index.html?quarks/providers/direct/DirectProvider.html) :
 
     DirectProvider dp = new DirectProvider();
 
 A **Provider** is an object that contains information on how and where your Quarks application will run. A **DirectProvider** is a type of Provider that runs your application directly within the current virtual machine when its `submit()` method is called.
 
 ## Creating a Topology
-Additionally a Provider is used to create a `Topology` object:
+Additionally a Provider is used to create a
+[`Topology`](http://quarks-edge.github.io/quarks/docs/javadoc/index.html?quarks/topology/Topology.html) instance :
 
     Topology topology = dp.newTopology();
 
-In Quarks, a **Topology** object is a container that describes the structure of your application:
+In Quarks, **Topology** is a container that describes the structure of your application:
 
 * Where the streams in the application come from
 
 * How the data in the stream is modified
 
-In the TempSensor application above, we have exactly one data source: the `TempSensor` object. We define the source stream by calling `topology.poll()`, which takes both a Supplier object and a time parameter to indicate how frequently readings should be taken. In our case, we read from the sensor every millisecond:
+In the TempSensor application above, we have exactly one data source: the `TempSensor` object. We define the source stream by calling `topology.poll()`, which takes both a Supplier function and a time parameter to indicate how frequently readings should be taken. In our case, we read from the sensor every millisecond:
 
     TStream<Double> tempReadings = topology.poll(sensor, 1, TimeUnit.MILLISECONDS);
 
 ## Defining The TStream Object
-Calling `topology.poll()` to define a source stream creates a `TStream<Double>` object, which represents the series of readings taken from the temperature sensor.
+Calling `topology.poll()` to define a source stream creates a `TStream<Double>` instance, which represents the series of readings taken from the temperature sensor.
 
 A streaming application can run indefinitely, so the TStream might see an arbitrarily large number of readings pass through it. Because a TStream represents the flow of your data, it supports a number of operations which allow you to modify your data.
 
@@ -138,22 +140,22 @@ In our example, we want to filter the stream of temperature readings, and remove
 
     TStream<Double> filteredReadings = tempReadings.filter(reading -> reading < 50 || reading > 80);
 
-As you can see, the function that is passed to `filter` operates on each data item individually. Unlike data streaming frameworks like [Apache Spark](https://spark.apache.org/), which operate on a collection of data in batch mode, Quarks achieves low latency data processing by manipulating each piece of data as soon as it becomes available. Filtering a TStream produces another TStream that contains only the filtered data item; for example, the `filteredReadings` stream.
+As you can see, the function that is passed to `filter` operates on each tuple individually. Unlike data streaming frameworks like [Apache Spark](https://spark.apache.org/), which operate on a collection of data in batch mode, Quarks achieves low latency processing by manipulating each piece of data as soon as it becomes available. Filtering a TStream produces another TStream that contains only the filtered tuples; for example, the `filteredReadings` stream.
 
 ## Printing to Output
-When our application detects interesting data (data outside of the expected parameters), we want to print that data to output. You can do this by calling the `TStream.print()` method, which calls `.toString()` on each object that passes through the stream:
+When our application detects interesting data (data outside of the expected parameters), we want to print results. You can do this by calling the `TStream.print()` method, which prints using  `.toString()` on each tuple that passes through the stream:
 
     filteredReadings.print();
 
-Unlike `TStream.filter()`, `TStream.print()` does not produce another TStream. This is because `TStream.print()` is a data **sink**, which represents the terminus of a data stream.
+Unlike `TStream.filter()`, `TStream.print()` does not produce another TStream. This is because `TStream.print()` is a **sink**, which represents the terminus of a stream.
 
-In addition to `TStream.print()`, which prints data items to standard output, there are other data sink operations that print data to an MQTT server, JDBC connection, file, or Kafka cluster. Additionally, you can define your own data sink by invoking `TStream.sink()` and passing in your own custom function.
+In addition to `TStream.print()` there are other sink operations that send tuples to an MQTT server, JDBC connection, file, or Kafka cluster. Additionally, you can define your own sink by invoking `TStream.sink()` and passing in your own function.
 
 
 ## Submitting Your Application
 Now that your application has been completely declared, the final step is to run your application.
 
-The `DirectProvider` object contains a `submit()` method, which runs your application directly within the current virtual machine:
+`DirectProvider` contains a `submit()` method, which runs your application directly within the current virtual machine:
 
     dp.submit(topology);
 
