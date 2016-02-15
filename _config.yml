@@ -1,0 +1,16 @@
+url: http://quarks-edge.github.io/quarks.documentation/
+baseurl: /quarks.documentation
+
+# Site settings
+title: Quarks
+description: "Quarks Documentation"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+detach:  false
+
+port:    4010
+host:    127.0.0.1
+
+docsurl: https://github.com/quarks-edge/quarks.documentation
