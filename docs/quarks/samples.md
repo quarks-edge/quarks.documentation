@@ -50,4 +50,4 @@ In addition to the sample application in the [Getting Started](../quarks-getting
   * Conditional stream tracing
 
 
-Additional samples are documented in the [Quarks Overview](http://quarks-edge.github.io/quarks/docs/javadoc/overview-summary.html#overview.description).
+Additional samples are documented in the [Quarks Overview](http://quarks-edge.github.io/quarks/docs/javadoc/overview-summary.html#overview.description) section of the Javadoc.
