@@ -1,5 +1,5 @@
 # quarks.documentation
-Documentation project for quarks
+Documentation project for Quarks
 
 # Updating Top Menu Bar
 To update top menu bar, open _includes/docHeader.html and update the links in there.
