@@ -14,7 +14,7 @@ Quarks is an open source programming model and runtime for edge devices that ena
 
 For more information, see the [Quarks overview](../overview)
 
-## Overview
+## Quarks and Streaming Analytics
 The fundamental building block of a Quarks application is a **stream**: a continuous sequence of tuples (messages, events, sensor readings, and so on).
 
 The Quarks API provides the ability to process or analyze each tuple as it appears on a stream, resulting in a derived stream.
