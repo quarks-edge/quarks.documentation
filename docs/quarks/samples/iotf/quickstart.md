@@ -21,7 +21,7 @@ You can execute the class directly from Eclipse, or using the script: `quarks/ja
 
 When run it produces output like this, with a URL as the third line.
 
-ADD IMAGE
+<img border="0" alt="Quickstart sample output" src="images/Quickstart_device.png">
 
 Pointing any browser on any machine to that URL takes you to a view of the data coming from the sample application.
 This view is executing in Bluemix, thus the device events from this sample are being sent over the public internet
@@ -29,7 +29,7 @@ to the Quickstart Bluemix service.
 
 Here's an example view:
 
-ADD IMAGE
+<img border="0" alt="Quickstart service output" src="images/Quickstart.png">
 
 ## Quarks Code
 
@@ -63,4 +63,4 @@ Here we map a stream of random numbers into JSON as the payload for a device eve
       device.events(json, "sensors", QoS.FIRE_AND_FORGET);
   {% endhighlight %}
 
-It's that simple to send a Quarks stream to IBM Watson Platform as device events.
+It's that simple to send a Quarks stream to IBM Watson IoT Platform as device events.
