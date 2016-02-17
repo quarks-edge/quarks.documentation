@@ -12,7 +12,7 @@ Message hubs are used to isolate the back-end system from having to handle conne
 
 An example of such a message hub designed for the Internet of Things is
 [IBM Watson IoT Platform](https://internetofthings.ibmcloud.com/). This cloud service runs on IBM's Bluemix cloud platform
-and [Quarks provides a connector](http://quarks-edge.github.io/quarks/docs/javadoc/index.html?quarks/connectors/iotf/IotfDevice.html).
+and Quarks provides a [connector](http://quarks-edge.github.io/quarks/docs/javadoc/index.html?quarks/connectors/iotf/IotfDevice.html).
 
 You can test out the service without any registration by using its Quickstart service and the Quarks sample application:
 [quarks.samples.connectors.iotf.IotfQuickstart](http://quarks-edge.github.io/quarks/docs/javadoc/index.html?quarks/samples/connectors/iotf/IotfQuickstart.html).
