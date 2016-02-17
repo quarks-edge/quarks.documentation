@@ -1,13 +1,13 @@
 ---
 layout: docs
 title: Committers  
-description: List of Quarks Committers and How to Become a Committer
+description: Commit Activity and How to Become a Committer
 weight: 30
 ---
 
-# Current Committers
+# Commit Activity
 
-To see a list of current committers click [here](https://github.com/orgs/quarks-edge/teams/quarkscommitters).
+To see commit activity for Quarks, click [here](https://github.com/quarks-edge/quarks/pulse).
 
 # How to Become a Committer
 
