@@ -88,20 +88,29 @@ For example, if your device takes temperature readings from a sensor 1,000 times
 
 Every time you call `TempSensor.get()`, it returns a new temperature reading. The continuous temperature readings are a stream of data that a Quarks application can process.
 
-Our sample Quarks application processes this stream by filtering the data and printing the results:
+Our sample Quarks application processes this stream by filtering the data and printing the results. Let's define a TempSensorApplication class for the application:
 
   {% highlight java %}
 
-  public static void main(String[] args) throws Exception {
-    TempSensor sensor = new TempSensor();
-    DirectProvider dp = new DirectProvider();      
-    Topology topology = dp.newTopology();
-    TStream<Double> tempReadings = topology.poll(sensor, 1, TimeUnit.MILLISECONDS);
-    TStream<Double> filteredReadings = tempReadings.filter(reading -> reading < 50 || reading > 80);
+import java.util.concurrent.TimeUnit;
 
-    filteredReadings.print();
-    dp.submit(topology);
-  }
+import quarks.providers.direct.DirectProvider;
+import quarks.topology.TStream;
+import quarks.topology.Topology;
+
+public class TempSensorApplication {
+	public static void main(String[] args) throws Exception {
+	    TempSensor sensor = new TempSensor();
+	    DirectProvider dp = new DirectProvider();      
+	    Topology topology = dp.newTopology();
+	    TStream<Double> tempReadings = topology.poll(sensor, 1, TimeUnit.MILLISECONDS);
+	    TStream<Double> filteredReadings = tempReadings.filter(reading -> reading < 50 || reading > 80);
+
+	    filteredReadings.print();
+	    dp.submit(topology);
+	  }
+
+}
   {% endhighlight %}
 
 To understand how the application processes the stream, let's review each line.
