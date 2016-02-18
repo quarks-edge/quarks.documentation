@@ -92,25 +92,25 @@ Our sample Quarks application processes this stream by filtering the data and pr
 
   {% highlight java %}
 
-import java.util.concurrent.TimeUnit;
+	import java.util.concurrent.TimeUnit;
 
-import quarks.providers.direct.DirectProvider;
-import quarks.topology.TStream;
-import quarks.topology.Topology;
+	import quarks.providers.direct.DirectProvider;
+	import quarks.topology.TStream;
+	import quarks.topology.Topology;
 
-public class TempSensorApplication {
-	public static void main(String[] args) throws Exception {
-	    TempSensor sensor = new TempSensor();
-	    DirectProvider dp = new DirectProvider();      
-	    Topology topology = dp.newTopology();
-	    TStream<Double> tempReadings = topology.poll(sensor, 1, TimeUnit.MILLISECONDS);
-	    TStream<Double> filteredReadings = tempReadings.filter(reading -> reading < 50 || reading > 80);
+	public class TempSensorApplication {
+		public static void main(String[] args) throws Exception {
+		    TempSensor sensor = new TempSensor();
+		    DirectProvider dp = new DirectProvider();      
+		    Topology topology = dp.newTopology();
+		    TStream<Double> tempReadings = topology.poll(sensor, 1, TimeUnit.MILLISECONDS);
+		    TStream<Double> filteredReadings = tempReadings.filter(reading -> reading < 50 || reading > 80);
 
-	    filteredReadings.print();
-	    dp.submit(topology);
-	  }
-
-}
+		    filteredReadings.print();
+		    dp.submit(topology);
+		  }
+	}
+  
   {% endhighlight %}
 
 To understand how the application processes the stream, let's review each line.
