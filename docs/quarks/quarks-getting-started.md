@@ -205,19 +205,38 @@ The application console includes two sections:
 ## Adding the console to your application
 If you want to use the console, you must embed a web server in your application that configures a web application for the console.
 
-To include the console in your application, your application must include the following class:
+To include the console in your application, your application must use the DevelopmentProvider instead of the DirectProvider. You can get the url for the console from the development provider using the getService method as shown in the modified application below:
 
-  DevelopmentTopologyProvider dtp = new DevelopmentTopologyProvider();
-  Topology t = dtp.newTopology("MyTopology");
-  // add oplets to the topology
-  …
-  // submit the topology
-  dtp.submit(t, Collections.emptyMap());
+  {% highlight java %}
 
-  // make a call to getServices, get the HttpServer service,
-  // and call getConsoleUrl() which returns the url the
-  // console is available at
-  System.out.println(dtp.getServices().getService(HttpServer.class).getConsoleUrl());
+	import java.util.concurrent.TimeUnit;
+
+	import quarks.console.server.HttpServer;
+	import quarks.providers.development.DevelopmentProvider;
+	import quarks.topology.TStream;
+	import quarks.topology.Topology;
+
+	public class TempSensorApplication {
+		public static void main(String[] args) throws Exception {
+		    TempSensor sensor = new TempSensor();
+		    DevelopmentProvider dp = new DevelopmentProvider(); 
+		    Topology topology = dp.newTopology();
+		    TStream<Double> tempReadings = topology.poll(sensor, 1, TimeUnit.MILLISECONDS);
+		    TStream<Double> filteredReadings = tempReadings.filter(reading -> reading < 50 || reading > 80);
+		    filteredReadings.print();
+	    
+		    // print the console URL and wait for 10 seconds before submitting the topology
+		    System.out.println(dp.getServices().getService(HttpServer.class).getConsoleUrl());
+		    try {
+		        TimeUnit.SECONDS.sleep(10);
+		    } catch (InterruptedException e) {
+		        //do nothing
+		    }
+		    dp.submit(topology);
+		  }
+	}
+
+  {% endhighlight %}
 
 
 ## Accessing the console
