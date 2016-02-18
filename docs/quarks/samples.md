@@ -51,7 +51,7 @@ In addition to the sample application in the [Getting Started](../quarks-getting
 
 * **IBM Watson IoT Platform** 
 
-   Samples that demonstrate how to use *IBM Watson IoT Platform as the IoT scale message hub between Quarks and back-end analytic systems:
+   Samples that demonstrate how to use IBM Watson IoT Platform as the IoT scale message hub between Quarks and back-end analytic systems:
    
    * [Sample using the no-registration Quickstart service](../iotf/quickstart)
 
