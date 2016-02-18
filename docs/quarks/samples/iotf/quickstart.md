@@ -21,7 +21,7 @@ You can execute the class directly from Eclipse, or using the script: `quarks/ja
 
 When run it produces output like this, with a URL as the third line.
 
-<img border="0" alt="Quickstart sample output" src="images/Quickstart_device.png">
+<img border="0" alt="Quickstart sample output" src="../images/Quickstart_device.png">
 
 Pointing any browser on any machine to that URL takes you to a view of the data coming from the sample application.
 This view is executing in Bluemix, thus the device events from this sample are being sent over the public internet
@@ -29,7 +29,7 @@ to the Quickstart Bluemix service.
 
 Here's an example view:
 
-<img border="0" alt="Quickstart service output" src="images/Quickstart.png">
+<img border="0" alt="Quickstart service output" src="../images/Quickstart.png">
 
 ## Quarks Code
 
