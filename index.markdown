@@ -6,7 +6,9 @@ description:  Documentation project for Quarks
 
 # Quarks Documentation
 
-Documentation for Quarks Project
+Quarks is an open source programming model and runtime for edge devices that enables you to analyze streaming data on your edge devices.
+
+The quarks.documentation project includes resources that help you learn how to create your own Quarks applications.
 
 # Table of Content
 {% include nav.html context="/docs/"%}
@@ -39,4 +41,4 @@ Refer to this documentation to get started:  [Using Jekyll with Pages](https://h
 
 To contribute, clone this project locally, make your changes, and create a pull request.
 
-To learn more on how to do this, refer to the [Get Involved](/quarks.documentation/docs/quarks/getinvolved/) page. 
+To learn more on how to do this, refer to the [Get Involved](/quarks.documentation/docs/quarks/getinvolved/) page.
