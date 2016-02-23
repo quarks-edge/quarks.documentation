@@ -10,7 +10,8 @@ Quarks is an open source programming model and runtime for edge devices that ena
 
 The quarks.documentation project includes resources that help you learn how to create your own Quarks applications.
 
-# Table of Content
+# Table of Contents
+* [Javadoc](https://quarks-edge.github.io/quarks/docs/javadoc/index.html)
 {% include nav.html context="/docs/"%}
 
 # New Documentation
