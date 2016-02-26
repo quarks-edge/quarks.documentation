@@ -13,7 +13,9 @@ The quarks.documentation project includes resources that help you learn how to c
 # Table of Contents
 * [Quarks Javadoc](https://quarks-edge.github.io/quarks/docs/javadoc/index.html)
 {% include nav.html context="/docs/"%}
-
+* Presentations
+  * [Streaming Analytics on the Edge](https://ibm.box.com/s/j50ktov45r28cyj6lkeu6habzmpwapdp) from IBM InterConnect 2016
+ 
 # New Documentation
 
 To request new documentation, please open an issue here:
