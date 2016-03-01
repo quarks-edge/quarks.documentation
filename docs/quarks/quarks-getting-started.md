@@ -1,11 +1,11 @@
 ---
 layout: docs
 title: Getting Started
-description:  Quarks Getting Started
+description:  Quarks getting started guide
 weight: 10
 ---
 
-# Getting Started With Quarks
+# Getting started with Quarks
 Quarks is an open source programming model and runtime for edge devices that enables you to analyze streaming data on your edge devices. When you analyze on the edge, you can:
 
 * Reduce the amount of data that you transmit to your analytics server
@@ -14,7 +14,7 @@ Quarks is an open source programming model and runtime for edge devices that ena
 
 For more information, see the [Quarks overview](../overview)
 
-## Quarks and Streaming Analytics
+## Quarks and streaming analytics
 The fundamental building block of a Quarks application is a **stream**: a continuous sequence of tuples (messages, events, sensor readings, and so on).
 
 The Quarks API provides the ability to process or analyze each tuple as it appears on a stream, resulting in a derived stream.
@@ -47,7 +47,7 @@ The Quarks Java 8 JAR files are located in the `quarks/java8/lib` directory.
     <img src="../images/Build_Path_Jars.JPG" style="width:661px;height:444px;">
 
 <br/>
-Your environment is set up! You you can start writing your first Quarks application.
+Your environment is set up! You can start writing your first Quarks application.
 
 
 # Creating a simple application
@@ -123,7 +123,7 @@ Your first step when you write a Quarks application is to create a
 
 A **Provider** is an object that contains information on how and where your Quarks application will run. A **DirectProvider** is a type of Provider that runs your application directly within the current virtual machine when its `submit()` method is called.
 
-## Creating a Topology
+## Creating a topology
 Additionally a Provider is used to create a
 [`Topology`](http://quarks-edge.github.io/quarks/docs/javadoc/index.html?quarks/topology/Topology.html) instance :
 
@@ -139,7 +139,7 @@ In the TempSensor application above, we have exactly one data source: the `TempS
 
     TStream<Double> tempReadings = topology.poll(sensor, 1, TimeUnit.MILLISECONDS);
 
-## Defining The TStream Object
+## Defining The TStream object
 Calling `topology.poll()` to define a source stream creates a `TStream<Double>` instance, which represents the series of readings taken from the temperature sensor.
 
 A streaming application can run indefinitely, so the TStream might see an arbitrarily large number of readings pass through it. Because a TStream represents the flow of your data, it supports a number of operations which allow you to modify your data.
@@ -151,7 +151,7 @@ In our example, we want to filter the stream of temperature readings, and remove
 
 As you can see, the function that is passed to `filter` operates on each tuple individually. Unlike data streaming frameworks like [Apache Spark](https://spark.apache.org/), which operate on a collection of data in batch mode, Quarks achieves low latency processing by manipulating each piece of data as soon as it becomes available. Filtering a TStream produces another TStream that contains only the filtered tuples; for example, the `filteredReadings` stream.
 
-## Printing to Output
+## Printing to output
 When our application detects interesting data (data outside of the expected parameters), we want to print results. You can do this by calling the `TStream.print()` method, which prints using  `.toString()` on each tuple that passes through the stream:
 
     filteredReadings.print();
@@ -161,7 +161,7 @@ Unlike `TStream.filter()`, `TStream.print()` does not produce another TStream. T
 In addition to `TStream.print()` there are other sink operations that send tuples to an MQTT server, JDBC connection, file, or Kafka cluster. Additionally, you can define your own sink by invoking `TStream.sink()` and passing in your own function.
 
 
-## Submitting Your Application
+## Submitting your application
 Now that your application has been completely declared, the final step is to run your application.
 
 `DirectProvider` contains a `submit()` method, which runs your application directly within the current virtual machine:
@@ -179,7 +179,7 @@ After you run your program, you should see output containing only "interesting" 
 
 As you can see, all temperatures are outside the 50-80 degree range. In terms of a real-world application, this would prevent a device from sending superfluous data over a network, thereby reducing communication costs.
 
-## Further Examples
+## Further examples
 This example demonstrates a small piece of Quarks' functionality. Quarks supports more complicated topologies, such as topologies that require merging and splitting data streams, or perform operations which aggregate the last *N* seconds of data (for example, calculating a moving average).
 
 For more complex examples, see:
