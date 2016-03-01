@@ -73,8 +73,6 @@ To include the console in your application, your application must use the Develo
 # Accessing the console
 To access the console from your web browser, enter the URL that is printed to the command line. The URL has the following format:
 
-http://localhost:port_number/console
-
-Important: You can access the console only from the host where you run your application.
+http://host_name:port_number/console
 
 If you cannot access the console at this URL, ensure your running application has a `console.war` file in the `webapps` directory.
