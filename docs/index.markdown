@@ -5,15 +5,15 @@ description:  Documentation project for Quarks
 ---
 
 # Quarks Documentation
-
 Documentation for Quarks Project
 
-# Table of Content
+# Table of Contents
 {% include nav.html context="/docs/"%}
 
 # New Documentation
+Quarks is evolving, and so is the documentation. If the existing documentation hasn't answered your questions, you can request new or updated documentation by opening an issue.
 
-To request new documentation, please open an issue here:
+Click on "New Documentation" to open an issue:
 
    <form action="{{site.docsurl}}/issues/new" target="_blank">
   	  <input type="submit" value="New Documentation">
@@ -29,7 +29,7 @@ To provide feedback on our documentation:
 
 This will open an issue for the page that you are currently visiting.  
 
-# Contributing
+# Contributing Documentation 
 
 If you have ideas on how we can better document or explain some of the concepts, we would love to have your contribution!  The quarks.documentation site uses Github's flavor of Markdown and Jekyll markdown for our documentation.
 
