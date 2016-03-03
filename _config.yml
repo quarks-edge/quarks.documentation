@@ -1,80 +1,16 @@
-project: mydoc_designers
-audience: designers
-product: doc
-platform: all
-version: all
-output: web
-destination: ../doc_outputs/mydoc/designers
-topnav_title: Apache Quarks Incubating
-homepage_title: Apache Quarks Incubating
-site_title: Apache Quarks
-project_folder: mydoc
-company_name: Apache Quarks Incubating
-footer_image_location: ../../common_images/company_logo.png
-github_editme_path: wmarshall484/documentation-theme-jekyll
+url: http://quarks-edge.github.io/quarks.documentation/
+baseurl: /quarks.documentation
+
+# Site settings
+title: Quarks
+description: "Quarks Documentation"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+detach:  false
+
+port:    4010
+host:    127.0.0.1
+
 docsurl: https://github.com/quarks-edge/quarks.documentation
-disqus_shortname: idrbwjekyll
-# variables
-
-sidebar_tagline: Quarks
-sidebar_version: Version 0.3.0
-theme_file: theme-blue.css
-pdf_file_name: mydoc_designers_pdf.pdf
-
-# the algolia entries here are experimental only.
-
-#gems:
-#  - algoliasearch-jekyll
-#algolia:
-#  application_id: 'HXUBJERYYB'
-#  index_name:     'documentation_theme_jekyll_designers'
-port: 4009
-
-exclude:
-  - _site
-  - _drafts
-  - configs/
-  - doc/mydoc_writers*
-
-# same for all
-host: 127.0.0.1
-feedback_email: wcmarsha@apache.org
-
-# these settings should work, but they don't seem to apply the right highlighting
-
-#highlighter: rouge
-#markdown: kramdown
-#kramdown:
-#  input: GFM
-#  auto_ids: true
-#  hard_wrap: false
-#  syntax_highlighter: rouge
-
-highlighter: pygments
-markdown: redcarpet
-redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "tables", "with_toc_data"]
-
-
-collections:
-  tooltips:
-    output: false
-
-defaults:
-  -
-    scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "page"
-      comments: true
-      search: true
-  -
-    scope:
-      path: ""
-      type: "tooltips"
-    values:
-      layout: "page"
-      comments: true
-      search: true
-      tooltip: true
