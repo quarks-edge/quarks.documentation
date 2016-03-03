@@ -1,6 +1,3 @@
-# this is simply copied over from config/config_designers.yml
-
-# project definitions
 project: mydoc_designers
 audience: designers
 product: doc
@@ -8,16 +5,16 @@ platform: all
 version: all
 output: web
 destination: ../doc_outputs/mydoc/designers
-topnav_title: Incubating Apache Quarks
-homepage_title: Incubating Apache Quarks
-site_title: Quarks
+topnav_title: Apache Quarks Incubating
+homepage_title: Apache Quarks Incubating
+site_title: Apache Quarks
 project_folder: mydoc
-company_name: Incubating Apache Quarks
+company_name: Apache Quarks Incubating
 footer_image_location: ../../common_images/company_logo.png
-github_editme_path: tomjohnson1492/documentation-theme-jekyll/edit/reviews
+github_editme_path: wmarshall484/documentation-theme-jekyll
+docsurl: https://github.com/quarks-edge/quarks.documentation
 disqus_shortname: idrbwjekyll
 # variables
-
 
 sidebar_tagline: Quarks
 sidebar_version: Version 0.3.0
@@ -81,4 +78,3 @@ defaults:
       comments: true
       search: true
       tooltip: true
-

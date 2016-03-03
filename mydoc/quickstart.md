@@ -1,8 +1,5 @@
 ---
-layout: docs
 title: Quickstart IBM Watson IoT Platform Sample
-description: Connecting Quarks to Quickstart service on IBM Watson IoT Platform.
-weight: 15
 ---
 
 # Quarks to Quickstart Quickly!
@@ -21,7 +18,7 @@ You can execute the class directly from Eclipse, or using the script: `quarks/ja
 
 When run it produces output like this, with a URL as the third line.
 
-<img border="0" alt="Quickstart sample output" src="../images/Quickstart_device.png">
+<img border="0" alt="Quickstart sample output" src="images/Quickstart_device.png">
 
 Pointing any browser on any machine to that URL takes you to a view of the data coming from the sample application.
 This view is executing in Bluemix, thus the device events from this sample are being sent over the public internet
@@ -29,7 +26,7 @@ to the Quickstart Bluemix service.
 
 Here's an example view:
 
-<img border="0" alt="Quickstart service output" src="../images/Quickstart.png">
+<img border="0" alt="Quickstart service output" src="images/Quickstart.png">
 
 ## Quarks Code
 
@@ -38,16 +35,16 @@ https://github.com/quarks-edge/quarks/blob/master/samples/connectors/src/main/ja
 
 The first step to is to create a `IotDevice` instance that represents the connection to IBM Watson IoT Platform Qucikstart service.
 
-  {% highlight java %}
+```java
         // Declare a connection to IoTF Quickstart service
         String deviceId = "qs" + Long.toHexString(new Random().nextLong());
         IotDevice device = IotfDevice.quickstart(topology, deviceId);
-  {% endhighlight %}
+```
 
 Now any stream can send device events to the Quickstart service by simply calling its `events()` method.
 Here we map a stream of random numbers into JSON as the payload for a device event is typically JSON.
 
- {% highlight java %}
+```java
           TStream<JsonObject> json = raw.map(v -> {
             JsonObject j = new JsonObject();
             j.addProperty("temp", v[0]);
@@ -55,12 +52,12 @@ Here we map a stream of random numbers into JSON as the payload for a device eve
             j.addProperty("objectTemp", v[2]);
             return j;
         });
-  {% endhighlight %}
+```
   
   Now we have a stream of simulated sensor reading events as JSON tuples (`json`) we send them as events with event identifer (type) `sensors`  using `device`.
   
-  {% highlight java %}
+```java
       device.events(json, "sensors", QoS.FIRE_AND_FORGET);
-  {% endhighlight %}
+```
 
 It's that simple to send a Quarks stream to IBM Watson IoT Platform as device events.

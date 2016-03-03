@@ -1,7 +1,6 @@
 ---
 title: FAQ  
 ---
-
 ## What Is Quarks?
 
 Quarks provides APIs and a lightweight runtime to analyze streaming data at the edge.
@@ -44,19 +43,19 @@ You will find a release of Quarks for download [here](https://github.com/quarks-
 
 ## How do I get started?
 
-Getting started is simple. Once you have downloaded Quarks, everything you need to know to get up and running, you will find [here](../quarks-getting-started). We suggest you also run the [Quarks sample programs](../samples) to familiarize yourselves with the code base.
+Getting started is simple. Once you have downloaded Quarks, everything you need to know to get up and running, you will find [here](quarks-getting-started). We suggest you also run the [Quarks sample programs](samples) to familiarize yourselves with the code base.
 
 ## How can I get involved?
 
- We would love to have your help! Visit [Get Involved](../getinvolved) to learn more about how to get involved.
+ We would love to have your help! Visit [Get Involved](getinvolved) to learn more about how to get involved.
 
 ## How can I contribute code?
 
-Just submit a [pull request](https://github.com/quarks-edge/quarks/pulls) and wait for a committer to review.  For more information, visit our [committer page](../committers).
+Just submit a [pull request](https://github.com/quarks-edge/quarks/pulls) and wait for a committer to review.  For more information, visit our [committer page](committers).
 
 ## Can I become a committer?
 
-Read about Quarks committers and how to become a committer [here](../committers).
+Read about Quarks committers and how to become a committer [here](committers).
 
 ## Where can I get the code?
 

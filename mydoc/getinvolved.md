@@ -14,7 +14,7 @@ When you are considering a code contribution, make sure there is an [Issue](http
 
 The best way to start on the code is to [fork](https://help.github.com/articles/fork-a-repo/) Quarks and make changes in your fork.  When you're happy with the changes in your fork, issue a [pull request](https://github.com/quarks-edge/quarks/pulls).  Make sure you document your code and contribute tests along with the code.
 
-We welcome new committers.  Get information on committers [here](../committers).
+We welcome new committers.  Get information on committers [here](committers).
 
 ## Contribute Documentation for the Web Site
 

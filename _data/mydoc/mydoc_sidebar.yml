@@ -43,7 +43,7 @@ entries:
       product: all
       version: all
       output: web, pdf
-
+  
     - title: FAQ
       url: /mydoc/faq.html
       audience: writers, designers
@@ -52,14 +52,14 @@ entries:
       version: all
       output: web, pdf
 
-  - title: Get started
+  - title: Get Started
     audience: writers, designers
     platform: all
     product: all
     version: all
     output: web, pdf
     items:
-    - title: 1. Getting started guide
+    - title: 1. Getting Started Guide
       url: /mydoc/quarks-getting-started.html
       audience: writers, designers
       platform: all
@@ -75,16 +75,38 @@ entries:
       version: all
       output: web, pdf
 
-    - title: 3. Using the console
-      url: /mydoc/console.html
+  - title: Sample Programs
+    audience: writers, designers
+    platform: all
+    product: all
+    version: all
+    output: web, pdf
+    items:
+    - title: 1. Samples
+      url: /mydoc/samples.html
       audience: writers, designers
       platform: all
       product: all
       version: all
       output: web, pdf
 
-    - title: 4. Sample programs
-      url: /mydoc/samples.html
+    - title: 2. Quickstart IBM Watson IoT Platform
+      url: /mydoc/quickstart.html
+      audience: writers, designers
+      platform: all
+      product: all
+      version: all
+      output: web, pdf
+
+  - title: Using The Console
+    audience: writers, designers
+    platform: all
+    product: all
+    version: all
+    output: web, pdf
+    items:
+    - title: 1. Using The Console
+      url: /mydoc/console.html
       audience: writers, designers
       platform: all
       product: all

@@ -39,7 +39,7 @@ topnav_dropdowns:
           output: web
 
         - title: Samples
-          url: /mydoc/samples.html
+          url: samples
           audience: writers, designers
           platform: all
           product: all
@@ -47,7 +47,7 @@ topnav_dropdowns:
           output: web
 
         - title: FAQ
-          url: /mydoc/faq.html
+          url: faq
           audience: writers, designers
           platform: all
           product: all
