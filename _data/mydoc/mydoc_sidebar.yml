@@ -43,7 +43,6 @@ entries:
       product: all
       version: all
       output: web, pdf
-  
     - title: FAQ
       url: /mydoc/faq.html
       audience: writers, designers
