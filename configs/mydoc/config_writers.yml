@@ -1,25 +1,26 @@
-project: mydoc_designers
-audience: designers
+# project definitions
+project: mydoc_writers
+audience: writers
 product: doc
 platform: all
 version: all
 output: web
-destination: ../doc_outputs/mydoc/designers
-topnav_title: Quarks Documentation
-homepage_title: Quarks Documentation
-site_title: Quarks Documentation
+destination: ../doc_outputs/mydoc/writers
+topnav_title: Jekyll Documentation Theme
+homepage_title: Jekyll doc theme for writers
+site_title: Jekyll theme for writers
 project_folder: mydoc
-company_name: Quarks
+company_name: Your company
 footer_image_location: ../../common_images/company_logo.png
-github_editme_path: quarks-edge/quarks.documentation
-docsurl: https://github.com/quarks-edge/quarks.documentation
+github_editme_path: tomjohnson1492/documentation-theme-jekyll/edit/reviews
 disqus_shortname: idrbwjekyll
 # variables
 
-sidebar_tagline: Quarks
-sidebar_version: Version 0.3.0
-theme_file: theme-blue.css
-pdf_file_name: mydoc_designers_pdf.pdf
+
+sidebar_tagline: Writers
+sidebar_version: Version 4.0
+theme_file: theme-green.css
+pdf_file_name: mydoc_writers_pdf.pdf
 
 # the algolia entries here are experimental only.
 
@@ -27,7 +28,7 @@ pdf_file_name: mydoc_designers_pdf.pdf
 #  - algoliasearch-jekyll
 #algolia:
 #  application_id: 'HXUBJERYYB'
-#  index_name:     'documentation_theme_jekyll_designers'
+#  index_name:     'documentation_theme_jekyll_writers'
 port: 4009
 
 exclude:
@@ -38,7 +39,7 @@ exclude:
 
 # same for all
 host: 127.0.0.1
-feedback_email: wcmarsha@apache.org
+feedback_email: tomjohnson1492@gmail.com
 
 # these settings should work, but they don't seem to apply the right highlighting
 
@@ -54,7 +55,6 @@ highlighter: pygments
 markdown: redcarpet
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "tables", "with_toc_data"]
-
 
 collections:
   tooltips:
@@ -78,3 +78,4 @@ defaults:
       comments: true
       search: true
       tooltip: true
+

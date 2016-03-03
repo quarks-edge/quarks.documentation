@@ -1,3 +1,4 @@
+# project definitions
 project: mydoc_designers
 audience: designers
 product: doc
@@ -5,19 +6,19 @@ platform: all
 version: all
 output: web
 destination: ../doc_outputs/mydoc/designers
-topnav_title: Quarks Documentation
-homepage_title: Quarks Documentation
-site_title: Quarks Documentation
+topnav_title: Jekyll Documentation Theme
+homepage_title: Jekyll doc theme for designers
+site_title: Jekyll theme for designers
 project_folder: mydoc
-company_name: Quarks
+company_name: Your company
 footer_image_location: ../../common_images/company_logo.png
-github_editme_path: quarks-edge/quarks.documentation
-docsurl: https://github.com/quarks-edge/quarks.documentation
+github_editme_path: tomjohnson1492/documentation-theme-jekyll/edit/reviews
 disqus_shortname: idrbwjekyll
 # variables
 
-sidebar_tagline: Quarks
-sidebar_version: Version 0.3.0
+
+sidebar_tagline: Designers
+sidebar_version: Version 4.0
 theme_file: theme-blue.css
 pdf_file_name: mydoc_designers_pdf.pdf
 
@@ -38,7 +39,7 @@ exclude:
 
 # same for all
 host: 127.0.0.1
-feedback_email: wcmarsha@apache.org
+feedback_email: tomjohnson1492@gmail.com
 
 # these settings should work, but they don't seem to apply the right highlighting
 
@@ -78,3 +79,4 @@ defaults:
       comments: true
       search: true
       tooltip: true
+
