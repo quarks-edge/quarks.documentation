@@ -11,7 +11,7 @@ site_title: Quarks Documentation
 project_folder: mydoc
 company_name: Quarks
 footer_image_location: ../../common_images/company_logo.png
-github_editme_path: quarks-edge/quarks.documentation
+github_editme_path: quarks-edge/quarks.documentation/blob/gh-pages
 docsurl: https://github.com/quarks-edge/quarks.documentation
 disqus_shortname: idrbwjekyll
 # variables
