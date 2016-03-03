@@ -5,13 +5,13 @@ platform: all
 version: all
 output: web
 destination: ../doc_outputs/mydoc/designers
-topnav_title: Apache Quarks Incubating
-homepage_title: Apache Quarks Incubating
-site_title: Apache Quarks
+topnav_title: Quarks Documentation
+homepage_title: Quarks Documentation
+site_title: Quarks Documentation
 project_folder: mydoc
-company_name: Apache Quarks Incubating
+company_name: Quarks
 footer_image_location: ../../common_images/company_logo.png
-github_editme_path: wmarshall484/documentation-theme-jekyll
+github_editme_path: quarks-edge/quarks.documentation
 docsurl: https://github.com/quarks-edge/quarks.documentation
 disqus_shortname: idrbwjekyll
 # variables
