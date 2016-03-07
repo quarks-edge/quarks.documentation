@@ -37,6 +37,10 @@ Quarks supports open source technology (such as Apache Spark, Apache Storm, Flin
 
 Quarks is designed for the edge, rather than a more centralized system.  It has a small footprint, suitable for running on devices.  Quarks provides simple analytics, allowing a device to analyze data locally and to only send to the centralized system if there is a need, reducing communication costs.
 
+## Why do I need Quarks, rather than coding the complete application myself?
+
+Quarks is a tool for edge analytics that allows you to be more productive. Quarks provides a consistent data model (streams and windows) and provides useful functionality, such as aggregations, joins, etc. Using Quarks lets you to take advantage of this functionality, allowing you to focus on your application needs.
+
 ## Where can I download Quarks to try it out?
 
 You will find a release of Quarks for download [here](https://github.com/quarks-edge/quarks/releases/latest).
