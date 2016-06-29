@@ -1,3 +1,3 @@
-## Jekyll Documentation theme
+## Quarks is now an Apache project (incubating)
 
-This is the readme page of the Jekyll documentation theme.
+Go to http://quarks.incubator.apache.org/ for information about Apache Quarks.
